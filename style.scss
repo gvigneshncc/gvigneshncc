@@ -1,0 +1,261 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  margin: 0 auto;
+
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 128, 238, 0.7371323529411764) 0%,
+    rgba(255, 249, 246, 1) 35%,
+    rgba(238, 128, 238, 0.7371323529411764) 100%
+  );
+}
+
+#container {
+  @include flex-center(column, nowrap);
+
+  justify-content: space-around;
+  width: fit-content;
+  margin: inherit;
+  margin-top: 20px;
+  position: relative;
+
+  h1 {
+    padding: 10px;
+  }
+
+  #board-manager {
+    @include flex-center(row, nowarp);
+    justify-content: space-between;
+    margin-top: 20px;
+
+    input {
+      margin-right: 15px;
+      padding: 5px;
+
+      height: 30px;
+      border: none;
+      border-bottom: 2px solid $card-border-purple;
+      background: transparent;
+    }
+
+    button {
+      border: 4px solid $card-border-purple;
+      background-color: $card-purple;
+      color: white;
+      font-weight: bold;
+    }
+  }
+
+  #boards {
+    @include flex-center(column, nowrap);
+
+    margin-top: 50px;
+    // max-width: 1100px;
+    // overflow: auto;
+
+    .board {
+      @include flex-center(row, nowrap);
+      border-radius: 12px;
+      align-items: flex-start;
+
+      overflow: auto;
+      margin-bottom: 50px;
+      padding: 50px;
+      padding-top: 70px;
+      position: relative;
+
+      h1 {
+        color: $card-border-purple;
+        align-self: flex-start;
+        position: absolute;
+        top: 10px;
+        left: 15px;
+      }
+
+      .add-list {
+        order: 1;
+        padding: 10px;
+        margin: 10px;
+
+        background-color: $container-yellow;
+        border: 3px solid $container-border-yellow;
+        font-weight: bold;
+      }
+
+      .list-container {
+        @include test-border($container-border-yellow);
+        border-width: 8px;
+        background-color: $container-yellow;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+
+        .list-header {
+          @include flex-center(row, nowrap);
+          justify-content: space-between;
+          padding: 4px 8px;
+
+          input {
+            margin-right: 15px;
+            padding: 5px;
+
+            height: 30px;
+            border: none;
+            background-color: $container-yellow;
+            border-bottom: 2px solid $container-border-yellow;
+            font-weight: bold;
+          }
+
+          button {
+            @include test-border(#b13c2c);
+            border-width: 3px;
+            background-color: #dd5947;
+            color: white;
+            font-weight: bold;
+          }
+        }
+
+        .card-container {
+          @include flex-center(column, nowrap);
+          min-height: 130px;
+          min-width: 250px;
+
+          .create-card {
+            @include test-border($card-border-purple);
+            @include flex-center(column, nowrap);
+            justify-content: flex-start;
+            align-items: flex-start;
+            border-width: 6px;
+            border-radius: 12px;
+            background-color: $card-purple;
+            color: white;
+            min-height: 80px;
+            width: 250px;
+            margin: 5px;
+            padding: 10px;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(0.97);
+            }
+
+            .display-card-title {
+              font-weight: bold;
+              margin-bottom: 3px;
+            }
+
+            .display-card-desc {
+              text-align: left;
+            }
+          }
+        }
+
+        .list-footer button {
+          @include test-border(#008000);
+          border-width: 4px;
+          background-color: #30bd30;
+          color: white;
+          font-weight: bold;
+          margin: 10px;
+        }
+      }
+    }
+  }
+
+  .add-card {
+    display: none;
+    position: fixed;
+    @include test-border(black);
+    min-height: 300px;
+    width: 500px;
+    border-radius: 12px;
+    border: 5px solid grey;
+
+    background: rgb(199, 205, 199);
+    background: radial-gradient(
+      circle,
+      rgba(199, 205, 199, 1) 0%,
+      rgba(160, 167, 156, 1) 50%,
+      rgba(210, 213, 210, 0.7371323529411764) 100%
+    );
+
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+
+    & > div {
+      display: inline-block;
+    }
+
+    #close-card {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      cursor: pointer;
+      border: 1px solid;
+      width: 20px;
+      background-color: #dd5947;
+      border: 2px solid #b13c2c;
+      color: white;
+      font-weight: bolder;
+
+      &:hover {
+        transform: scale(0.97);
+      }
+    }
+
+    input,
+    textarea {
+      border-radius: 8px;
+      padding: 5px;
+      border: 3px solid grey;
+      resize: none;
+    }
+
+    button {
+      border: 4px solid grey;
+      font-weight: bolder;
+    }
+
+    .title-container,
+    .desc-container,
+    .comments-container {
+      width: 400px;
+      text-align: left;
+    }
+
+    #card-title {
+      margin: 0 10px;
+    }
+
+    .desc-container,
+    .comments-container {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+
+      #card-desc,
+      #card-comment {
+        flex-grow: 1;
+        margin: 0 10px;
+        height: 60px;
+      }
+    }
+
+    .show-comments {
+      text-align: left;
+
+      ul {
+        margin-left: 28px;
+      }
+    }
+  }
+}
