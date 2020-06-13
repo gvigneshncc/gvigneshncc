@@ -1,0 +1,25 @@
+$card-purple: #c540c5;
+$container-yellow: #ffff76;
+$container-border-yellow: #f0f025;
+$card-border-purple: #a711a7;
+
+@mixin flex-center($direction, $wrap) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: $direction $wrap;
+}
+
+@mixin test-border($color) {
+  border: 1px solid $color;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 7px;
+
+  &:hover {
+    transform: scale(0.975);
+  }
+}
