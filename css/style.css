@@ -244,6 +244,12 @@ body {
   width: 250px;
   margin: 5px;
   padding: 10px;
+  cursor: pointer;
+}
+
+#container #boards .board .list-container .card-container .create-card:hover {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
 }
 
 #container #boards .board .list-container .card-container .create-card .display-card-title {

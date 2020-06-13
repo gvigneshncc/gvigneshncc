@@ -142,6 +142,11 @@ body {
             width: 250px;
             margin: 5px;
             padding: 10px;
+            cursor: pointer;
+
+            &:hover {
+              transform: scale(0.97);
+            }
 
             .display-card-title {
               font-weight: bold;
