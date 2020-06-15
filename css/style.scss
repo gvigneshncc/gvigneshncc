@@ -9,14 +9,30 @@
 body {
   text-align: center;
   margin: 0 auto;
+  font-family: "Alegreya Sans SC", sans-serif;
 
-  background: rgb(255, 255, 255);
+  background: rgb(40, 45, 62);
   background: linear-gradient(
     90deg,
-    rgba(238, 128, 238, 0.7371323529411764) 0%,
-    rgba(255, 249, 246, 1) 35%,
-    rgba(238, 128, 238, 0.7371323529411764) 100%
+    rgba(40, 45, 62, 1) 0%,
+    rgba(34, 41, 61, 1) 64%,
+    rgba(40, 45, 62, 1) 100%
   );
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fafafa;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $container-background;
+  border-radius: 12px;
 }
 
 #container {
@@ -27,9 +43,12 @@ body {
   margin: inherit;
   margin-top: 20px;
   position: relative;
+  max-width: 1100px;
+  font-family: "Alegreya Sans SC", sans-serif;
 
   h1 {
     padding: 10px;
+    color: white;
   }
 
   #board-manager {
@@ -40,18 +59,25 @@ body {
     input {
       margin-right: 15px;
       padding: 5px;
+      color: white;
 
       height: 30px;
       border: none;
-      border-bottom: 2px solid $card-border-purple;
+      border-bottom: 2px solid $container-border;
       background: transparent;
+
+      &::placeholder {
+        color: #fafafa;
+        font-family: "Alegreya Sans SC", sans-serif;
+      }
     }
 
     button {
-      border: 4px solid $card-border-purple;
-      background-color: $card-purple;
-      color: white;
+      border: 4px solid $new-border;
+      background-color: $new-background;
+      color: $light-text-color;
       font-weight: bold;
+      font-family: "Alegreya Sans SC", sans-serif;
     }
   }
 
@@ -59,45 +85,50 @@ body {
     @include flex-center(column, nowrap);
 
     margin-top: 50px;
-    // max-width: 1100px;
-    // overflow: auto;
 
     .board {
       @include flex-center(row, nowrap);
       border-radius: 12px;
       align-items: flex-start;
+      max-width: 1100px;
+      overflow-x: auto;
+      overflow-y: hidden;
 
-      overflow: auto;
       margin-bottom: 50px;
       padding: 50px;
       padding-top: 70px;
       position: relative;
 
       h1 {
-        color: $card-border-purple;
+        color: $card-border;
         align-self: flex-start;
         position: absolute;
         top: 10px;
         left: 15px;
+        color: #fafafa;
       }
 
       .add-list {
         order: 1;
         padding: 10px;
         margin: 10px;
+        min-width: 60px;
 
-        background-color: $container-yellow;
-        border: 3px solid $container-border-yellow;
+        background-color: #30bd30;
+        border: 3px solid #008000;
         font-weight: bold;
+
+        color: #fafafa;
       }
 
       .list-container {
-        @include test-border($container-border-yellow);
-        border-width: 8px;
-        background-color: $container-yellow;
-        border-radius: 10px;
+        @include test-border($container-border);
+        border-width: 2px;
+        background-color: $container-background;
+        border-radius: 3px;
         padding: 10px;
         margin: 10px;
+        font-family: "Muli", sans-serif;
 
         .list-header {
           @include flex-center(row, nowrap);
@@ -110,17 +141,28 @@ body {
 
             height: 30px;
             border: none;
-            background-color: $container-yellow;
-            border-bottom: 2px solid $container-border-yellow;
+            background-color: $container-background;
+            border-bottom: 2px solid $container-border;
             font-weight: bold;
+            color: #fafafa;
+            font-family: "Alegreya Sans SC", sans-serif;
+
+            &::placeholder {
+              color: #fafafa;
+              font-family: "Alegreya Sans SC", sans-serif;
+            }
           }
 
           button {
             @include test-border(#b13c2c);
             border-width: 3px;
             background-color: #dd5947;
-            color: white;
+            color: $light-text-color;
             font-weight: bold;
+          }
+
+          i {
+            color: #ffc5c5;
           }
         }
 
@@ -130,14 +172,15 @@ body {
           min-width: 250px;
 
           .create-card {
-            @include test-border($card-border-purple);
+            @include test-border($container-border);
             @include flex-center(column, nowrap);
             justify-content: flex-start;
             align-items: flex-start;
-            border-width: 6px;
-            border-radius: 12px;
-            background-color: $card-purple;
-            color: white;
+            border-top: 3px solid $card-border;
+
+            // border-radius: 12px;
+            background-color: $card-background;
+            color: black;
             min-height: 80px;
             width: 250px;
             margin: 5px;
@@ -218,10 +261,14 @@ body {
       padding: 5px;
       border: 3px solid grey;
       resize: none;
+
+      &::placeholder {
+        font-family: "Alegreya Sans SC", sans-serif;
+      }
     }
 
     button {
-      border: 4px solid grey;
+      border: 4px solid $new-border;
       font-weight: bolder;
     }
 
@@ -247,6 +294,11 @@ body {
         flex-grow: 1;
         margin: 0 10px;
         height: 60px;
+      }
+
+      #del-card-button {
+        border-color: #be4949;
+        background-color: #f07e7e;
       }
     }
 
