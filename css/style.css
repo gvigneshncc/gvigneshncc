@@ -275,6 +275,7 @@ body {
 
 #container #boards .board .list-container .list-header i {
   color: #ffc5c5;
+  cursor: pointer;
 }
 
 #container #boards .board .list-container .card-container {
