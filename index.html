@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Personal Task Manager</title>
+    <title>Task Manager</title>
   </head>
   <body>
+    <script
+      src="https://kit.fontawesome.com/bd140501e9.js"
+      crossorigin="anonymous"
+    ></script>
     <div id="container">
-      <h1>Personal Task Manager</h1>
+      <h1>Task Manager</h1>
       <div id="board-manager">
         <input type="text" id="board-name" placeholder="Board Name" />
-        <button id="create-board">Create Board</button>
+        <button id="create-board">+ Board</button>
       </div>
       <div id="boards"></div>
       <div class="add-card">
@@ -24,12 +28,12 @@
         </div>
         <div class="desc-container">
           <textarea id="card-desc" placeholder="Description"></textarea>
-          <button id="create-card-button">Create Card</button>
+          <button id="create-card-button">+ Card</button>
           <button id="del-card-button">Delete Card</button>
         </div>
         <div class="comments-container">
           <textarea id="card-comment" placeholder="Enter Comment"></textarea>
-          <button id="create-comment-button">Create Comment</button>
+          <button id="create-comment-button">+ Comment</button>
         </div>
         <div class="show-comments"></div>
       </div>
