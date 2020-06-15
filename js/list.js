@@ -30,11 +30,14 @@ const createListMarkup = (boardIndex, listId) => {
       listName.className = "list-name";
       listName.placeholder = `Enter a name`;
       listNameRef = listName;
-      const deleteList = document.createElement("button");
-      deleteList.className = "delete-list";
+      // const deleteList = document.createElement("button");
+      // deleteList.className = "delete-list";
+      const deleteList = document.createElement("i");
+      deleteList.className = "fas fa-trash";
       deleteList.setAttribute("boardIndex", boardIndex);
       deleteList.setAttribute("listId", listId);
-      deleteList.innerText = "Delete this list";
+      // deleteList.innerHTML = `<i class="fas fa-trash"></i>`;
+
       deleteList.onclick = deleteListHandler;
       container.appendChild(listName);
       container.appendChild(deleteList);
@@ -49,7 +52,7 @@ const createListMarkup = (boardIndex, listId) => {
       addNewCard.className = "add-new-card";
       addNewCard.setAttribute("boardIndex", boardIndex);
       addNewCard.setAttribute("listId", listId);
-      addNewCard.innerText = "Add new card";
+      addNewCard.innerText = "+ Card";
       addNewCard.onclick = addNewCardHandler;
       container.appendChild(addNewCard);
     }
