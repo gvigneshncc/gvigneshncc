@@ -15,19 +15,18 @@ const createBoardMarkup = (index) => {
   addList.className = "add-list";
   addList.onclick = createList;
   addList.setAttribute("index", index);
-  addList.innerText = "Add new list";
+  addList.innerText = "+ List";
   boardDiv.appendChild(addList);
 };
 
 const createBoard = () => {
   const boardName = document.getElementById("board-name").value;
   if (!boardName.length > 0) return alert("Enter Board name");
-  
+
   let board = boardList.find((b) => b.name === boardName);
   if (board) {
     return alert("Board already exists");
   }
-  
   const index = boardList.push({
     name: boardName,
     list: [],
