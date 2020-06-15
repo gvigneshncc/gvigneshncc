@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@500&display=swap");
 button {
   cursor: pointer;
   border-radius: 12px;
   padding: 7px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 15px;
+  border-color: #008000;
+  background-color: #30bd30;
+  color: #fafafa;
 }
 
 button:hover {
@@ -19,9 +26,25 @@ button:hover {
 body {
   text-align: center;
   margin: 0 auto;
-  background: white;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(238, 128, 238, 0.737132)), color-stop(35%, #fff9f6), to(rgba(238, 128, 238, 0.737132)));
-  background: linear-gradient(90deg, rgba(238, 128, 238, 0.737132) 0%, #fff9f6 35%, rgba(238, 128, 238, 0.737132) 100%);
+  font-family: "Alegreya Sans SC", sans-serif;
+  background: #282d3e;
+  background: -webkit-gradient(linear, left top, right top, from(#282d3e), color-stop(64%, #22293d), to(#282d3e));
+  background: linear-gradient(90deg, #282d3e 0%, #22293d 64%, #282d3e 100%);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fafafa;
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #505873;
+  border-radius: 12px;
 }
 
 #container {
@@ -46,10 +69,13 @@ body {
   margin: inherit;
   margin-top: 20px;
   position: relative;
+  max-width: 1100px;
+  font-family: "Alegreya Sans SC", sans-serif;
 }
 
 #container h1 {
   padding: 10px;
+  color: white;
 }
 
 #container #board-manager {
@@ -75,17 +101,39 @@ body {
 #container #board-manager input {
   margin-right: 15px;
   padding: 5px;
+  color: white;
   height: 30px;
   border: none;
-  border-bottom: 2px solid #a711a7;
+  border-bottom: 2px solid #fafafa;
   background: transparent;
 }
 
+#container #board-manager input::-webkit-input-placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container #board-manager input:-ms-input-placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container #board-manager input::-ms-input-placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container #board-manager input::placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
 #container #board-manager button {
-  border: 4px solid #a711a7;
-  background-color: #c540c5;
+  border: 4px solid #008000;
+  background-color: #30bd30;
   color: white;
   font-weight: bold;
+  font-family: "Alegreya Sans SC", sans-serif;
 }
 
 #container #boards {
@@ -123,7 +171,9 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  overflow: auto;
+  max-width: 1100px;
+  overflow-x: auto;
+  overflow-y: hidden;
   margin-bottom: 50px;
   padding: 50px;
   padding-top: 70px;
@@ -131,12 +181,13 @@ body {
 }
 
 #container #boards .board h1 {
-  color: #a711a7;
+  color: #a29eaf;
   -ms-flex-item-align: start;
       align-self: flex-start;
   position: absolute;
   top: 10px;
   left: 15px;
+  color: #fafafa;
 }
 
 #container #boards .board .add-list {
@@ -145,18 +196,21 @@ body {
           order: 1;
   padding: 10px;
   margin: 10px;
-  background-color: #ffff76;
-  border: 3px solid #f0f025;
+  min-width: 60px;
+  background-color: #30bd30;
+  border: 3px solid #008000;
   font-weight: bold;
+  color: #fafafa;
 }
 
 #container #boards .board .list-container {
-  border: 1px solid #f0f025;
-  border-width: 8px;
-  background-color: #ffff76;
-  border-radius: 10px;
+  border: 1px solid #fafafa;
+  border-width: 2px;
+  background-color: #505873;
+  border-radius: 3px;
   padding: 10px;
   margin: 10px;
+  font-family: "Muli", sans-serif;
 }
 
 #container #boards .board .list-container .list-header {
@@ -184,9 +238,31 @@ body {
   padding: 5px;
   height: 30px;
   border: none;
-  background-color: #ffff76;
-  border-bottom: 2px solid #f0f025;
+  background-color: #505873;
+  border-bottom: 2px solid #fafafa;
   font-weight: bold;
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container #boards .board .list-container .list-header input::-webkit-input-placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container #boards .board .list-container .list-header input:-ms-input-placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container #boards .board .list-container .list-header input::-ms-input-placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container #boards .board .list-container .list-header input::placeholder {
+  color: #fafafa;
+  font-family: "Alegreya Sans SC", sans-serif;
 }
 
 #container #boards .board .list-container .list-header button {
@@ -195,6 +271,10 @@ body {
   background-color: #dd5947;
   color: white;
   font-weight: bold;
+}
+
+#container #boards .board .list-container .list-header i {
+  color: #ffc5c5;
 }
 
 #container #boards .board .list-container .card-container {
@@ -216,7 +296,7 @@ body {
 }
 
 #container #boards .board .list-container .card-container .create-card {
-  border: 1px solid #a711a7;
+  border: 1px solid #fafafa;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -236,10 +316,9 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  border-width: 6px;
-  border-radius: 12px;
-  background-color: #c540c5;
-  color: white;
+  border-top: 3px solid #a29eaf;
+  background-color: #fafafa;
+  color: black;
   min-height: 80px;
   width: 250px;
   margin: 5px;
@@ -319,8 +398,28 @@ body {
   resize: none;
 }
 
+#container .add-card input::-webkit-input-placeholder,
+#container .add-card textarea::-webkit-input-placeholder {
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container .add-card input:-ms-input-placeholder,
+#container .add-card textarea:-ms-input-placeholder {
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container .add-card input::-ms-input-placeholder,
+#container .add-card textarea::-ms-input-placeholder {
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
+#container .add-card input::placeholder,
+#container .add-card textarea::placeholder {
+  font-family: "Alegreya Sans SC", sans-serif;
+}
+
 #container .add-card button {
-  border: 4px solid grey;
+  border: 4px solid #008000;
   font-weight: bolder;
 }
 
@@ -358,6 +457,12 @@ body {
           flex-grow: 1;
   margin: 0 10px;
   height: 60px;
+}
+
+#container .add-card .desc-container #del-card-button,
+#container .add-card .comments-container #del-card-button {
+  border-color: #be4949;
+  background-color: #f07e7e;
 }
 
 #container .add-card .show-comments {
